@@ -19,7 +19,7 @@ def divide(num1, num2):
 
 #Function that allows to re-use the calculator and view the result   
 def end():
-    end=input ('Press any key to re-use the calculator')
+    end=input ('Press enter to re-use the calculator')
     main()
     
 
@@ -31,8 +31,8 @@ def main():
         print("You must enter a valid operation.")
         main()
     else:
-        var1 = int(input("Input the first number: "))
-        var2 = int(input("Input the second number: "))
+        var1 = float(input("Input the first number: "))
+        var2 = float(input("Input the second number: "))
         if(operation == '+'):
             print(add(var1, var2))
             end()
@@ -43,10 +43,13 @@ def main():
             print(multiply(var1, var2))
             end()
         else:
-            print(divide(var1, var2))
+            if(var2 == 0.0):
+                print('Hey! What the heck you think you are doing!? Dividing by 0?')
+            else: 
+                print(divide(var1, var2))
             end()
-creator = 'Made by Real from RealStudios'
-ver = 'Version: Alpha 0.1'
+creator = 'Made by Real and piotro from RealStudios'
+ver = 'Version: Open Alpha 0.2'
 print(creator)
 print(ver)
 main()

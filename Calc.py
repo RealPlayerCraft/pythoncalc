@@ -2,6 +2,8 @@
 #www.realstudiosen.tumblr.com
 #Written in Python 3.5.1
 #Adds num1, num2
+import math
+
 def add(num1, num2):
     return num1 + num2
 
@@ -17,6 +19,11 @@ def multiply(num1, num2):
 def divide(num1, num2):
     return num1 / num2
 
+#Power num1, num2     
+def power(num1, num2):
+    return math.pow(num1, num2)
+
+
 #Function that allows to re-use the calculator and view the result   
 def end():
     end=input ('Press enter to re-use the calculator')
@@ -25,9 +32,9 @@ def end():
 
 #Function that does all the job   
 def main():
-    operation = input("What do you want to do?(+, -, x, /): ")
+    operation = input("What do you want to do?(+, -, x, /, ^): ")
     #Checks for a valid operation
-    if(operation != "+" and operation != "-" and operation != "x" and operation != "/"):
+    if(operation != "+" and operation != "-" and operation != "x" and operation != "/" and operation != "^"):
         print("You must enter a valid operation.")
         main()
     else:
@@ -41,6 +48,9 @@ def main():
             end()
         elif(operation =='x'):
             print(multiply(var1, var2))
+            end()
+        elif(operation =='^'):
+            print(power(var1, var2))
             end()
         else:
             if(var2 == 0.0):

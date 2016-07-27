@@ -4,24 +4,56 @@
 #Adds num1, num2
 import math
 
-def add(num1, num2):
-    return num1 + num2
+class Expression(object):
+    def eval(self):
+        raise NotImplementedError("Please implement this method")
 
-#Subtracts num1, num2
-def subtract(num1, num2):
-    return num1 - num2
+class Constant(Expression):
+    def __init__(self, value):
+        self.value = value
+    
+    def eval(self):
+        return self.value
+    
+class AddExpression(Expression):
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
 
-#Multiplies num1, num2     
-def multiply(num1, num2):
-    return num1 * num2
+    def eval(self):
+        return self.left + self.right
 
-#Divides num1, num2     
-def divide(num1, num2):
-    return num1 / num2
+class SubstractExpression(Expression):
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
 
-#Power num1, num2     
-def power(num1, num2):
-    return math.pow(num1, num2)
+    def eval(self):
+        return self.left - self.right
+
+class MultiplyExpression(Expression):
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def eval(self):
+        return self.left * self.right
+
+class DivideExpression(Expression):
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def eval(self):
+        return self.left / self.right
+
+class PowerExpression(Expression):
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def eval(self):
+        return math.pow(self.left, self.right)
 
 
 #Function that allows to re-use the calculator and view the result   
@@ -41,25 +73,31 @@ def main():
         var1 = float(input("Input the first number: "))
         var2 = float(input("Input the second number: "))
         if(operation == '+'):
-            print(add(var1, var2))
+            expr = AddExpression(var1, var2)
+            print(expr.eval())
             end()
         elif(operation == '-'):
-            print(subtract(var1, var2))
+            expr = SubstractExpression(var1, var2)
+            print(expr.eval())
             end()
         elif(operation =='x'):
-            print(multiply(var1, var2))
+            expr = MultiplyExpression(var1, var2)
+            print(expr.eval())
             end()
         elif(operation =='^'):
-            print(power(var1, var2))
+            expr = PowerExpression(var1, var2)
+            print(expr.eval())
             end()
         else:
             if(var2 == 0.0):
                 print('Hey! What the heck you think you are doing!? Dividing by 0?')
             else: 
-                print(divide(var1, var2))
+                expr = DivideExpression(var1, var2)
+                print(expr.eval())
             end()
+
 creator = 'Made by Real and piotro from RealStudios'
-ver = 'Version: Open Alpha 0.2'
+ver = 'Version: Open Alpha 0.2.1'
 print(creator)
 print(ver)
 main()

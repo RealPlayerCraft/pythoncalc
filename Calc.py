@@ -53,7 +53,7 @@ class MultiplyExpression(TwoArgExpression):
         return self.left * self.right
 
     def op(self):
-        return "*"
+        return "x"
 
 class DivideExpression(TwoArgExpression):
     def eval(self):
@@ -97,7 +97,7 @@ def main():
     end()
 
 creator = 'Made by Real and piotro from RealStudios'
-ver = 'Version: Open Alpha 0.3.0'
+ver = 'Version: Open Alpha 0.3.1'
 calcDone = 'Operation Succeded!'
 print(creator)
 print(ver)

@@ -72,6 +72,7 @@ class PowerExpression(TwoArgExpression):
 
 #Function that allows to re-use the calculator and view the result   
 def end():
+    print(calcDone)
     end=input ('Press enter to re-use the calculator')
     main()
     
@@ -97,6 +98,7 @@ def main():
 
 creator = 'Made by Real and piotro from RealStudios'
 ver = 'Version: Open Alpha 0.3.0'
+calcDone = 'Operation Succeded!'
 print(creator)
 print(ver)
 main()

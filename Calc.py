@@ -69,36 +69,54 @@ class PowerExpression(TwoArgExpression):
     def op(self):
         return "^"
 
+class HelpExpression(Expression):
+    def eval(self):
+        return '''
+        This is help for calculator:
+        Choose one of available operations and follow instructions.
+        If you want to exit just hit enter or type invalid operation.
+        '''
+    def readArguments(self):
+        print()
 
-#Function that allows to re-use the calculator and view the result   
-def end():
-    print(calcDone)
-    end=input ('Press enter to re-use the calculator')
-    main()
-    
+    def op(self):
+        return "h"
 
-#Function that does all the job   
+def readOperation(operators):
+    return input('What do you want to do?(' + operators + '): ')
+
+#Function that does all the job
 def main():
-    expressionArray = [ AddExpression(), SubstractExpression(), MultiplyExpression(), DivideExpression(), PowerExpression(), SquareExpression() ]
+    #Initialize expressions array
+    expressionArray = [ AddExpression(), SubstractExpression(), MultiplyExpression(), DivideExpression(),
+    PowerExpression(), SquareExpression(), HelpExpression() ]
 
     expressionMap = dict()
+    separator = ', '
     operators = ''
     for e in expressionArray:
-        operators = operators + e.op() + ', '
+        operators = operators + e.op() + separator
         expressionMap.update({ e.op(): e })
 
-    operation = input('What do you want to do?(' + operators + '): ')
-    #Checks for a valid operation
-    if (operation in expressionMap):
+    operators = operators[:-len(separator)]
+
+
+    operation = readOperation(operators)
+    while operation in expressionMap:
         chosenExpression = expressionMap[operation]
         chosenExpression.readArguments()
         chosenExpression.print()
+        print()
+        operation = readOperation(operators)
 
-    end()
+
+    print('Thank you for using this calculator')
 
 creator = 'Made by Real and piotro from RealStudios'
 ver = 'Version: Open Alpha 0.3.1'
 calcDone = 'Operation Succeded!'
 print(creator)
 print(ver)
+print()
 main()
+

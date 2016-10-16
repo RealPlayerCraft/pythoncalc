@@ -75,6 +75,7 @@ class HelpExpression(Expression):
         This is help for calculator:
         Choose one of available operations and follow instructions.
         If you want to exit just hit enter or type invalid operation.
+	Allowed operations are printed in each interation of the program.
         '''
     def readArguments(self):
         print()

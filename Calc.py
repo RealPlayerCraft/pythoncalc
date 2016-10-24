@@ -56,7 +56,8 @@ class MultiplyExpression(TwoArgExpression):
 
     def op(self):
         return "x"
-
+		
+		
 class DivideExpression(TwoArgExpression):
     def eval(self):
         return self.left / self.right
@@ -78,12 +79,13 @@ class HelpExpression(Expression):
         Choose one of available operations and follow instructions.
         If you want to exit just hit enter or type an invalid operation.
 		For more help contact us on github.
+		Official GitHub link https://github.com/RealPlayerCraft/pythoncalc
         '''
     def readArguments(self):
         print()
 
     def op(self):
-        return "h"
+        return "help"
 
 def readOperation(operators):
     return input('Choose an operator.(' + operators + '): ')

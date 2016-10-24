@@ -1,6 +1,8 @@
 #Calculator by RealStudios
 #www.him8gr8k.ueuo.com
 #Written in Python 3.5.2
+#For more helpcontact us on github https://github.com/RealPlayerCraft/pythoncalc
+#Feel free to fork
 import math
 
 class Expression(object):
@@ -115,9 +117,7 @@ def main():
 
 creator = 'Made by Real, piotro and historis from RealStudios'
 ver = 'Version: Open Alpha 0.3.3'
-calcDone = 'Operation Succeded!'
 print(creator)
 print(ver)
-print()
 main()
 

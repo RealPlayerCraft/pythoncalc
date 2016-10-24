@@ -1,6 +1,6 @@
 #Calculator by RealStudios
-#www.realstudiosen.tumblr.com
-#Written in Python 3.5.1
+#www.him8gr8k.ueuo.com
+#Written in Python 3.5.2
 import math
 
 class Expression(object):
@@ -74,7 +74,8 @@ class HelpExpression(Expression):
         return '''
         This is help for calculator:
         Choose one of available operations and follow instructions.
-        If you want to exit just hit enter or type invalid operation.
+        If you want to exit just hit enter or type an invalid operation.
+		For more help contact us on github.
         '''
     def readArguments(self):
         print()
@@ -83,7 +84,7 @@ class HelpExpression(Expression):
         return "h"
 
 def readOperation(operators):
-    return input('What do you want to do?(' + operators + '): ')
+    return input('Choose an operator.(' + operators + '): ')
 
 #Function that does all the job
 def main():
@@ -112,8 +113,8 @@ def main():
 
     print('Thank you for using this calculator')
 
-creator = 'Made by Real and piotro from RealStudios'
-ver = 'Version: Open Alpha 0.3.1'
+creator = 'Made by Real, piotro and historis from RealStudios'
+ver = 'Version: Open Alpha 0.3.3'
 calcDone = 'Operation Succeded!'
 print(creator)
 print(ver)

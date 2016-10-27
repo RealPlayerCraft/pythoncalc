@@ -9,11 +9,11 @@ class Expression(object):
     def eval(self):
         raise NotImplementedError("Please implement this method")
 
-    def print(self):
+    def printme(self):
         print(self.eval());
 
     def readFloat(self, message):
-        return float(input(message))
+        return float(raw_input(message))
 
 class OneArgExpression(Expression):
     def readArguments(self):
@@ -82,13 +82,13 @@ class HelpExpression(Expression):
         Official GitHub link https://github.com/RealPlayerCraft/pythoncalc
         '''
     def readArguments(self):
-        print()
+        self.printme()
 
     def op(self):
         return "help"
 
 def readOperation(operators):
-    return input('Choose an operator.(' + operators + '): ')
+    return raw_input('Choose an operator.(' + operators + '): ')
 
 #Function that does all the job
 def main():
@@ -110,15 +110,15 @@ def main():
     while operation in expressionMap:
         chosenExpression = expressionMap[operation]
         chosenExpression.readArguments()
-        chosenExpression.print()
-        print()
+        chosenExpression.printme()
+        print
         operation = readOperation(operators)
 
 
     print('Thank you for using this calculator')
 
-creators = 'Made by Real, piotro and historis from RealStudios'
-ver = 'Version: Open Alpha 0.3.3'
+creators = 'Made by Real and historis'
+ver = 'Version: Open Alpha 0.4.0'
 print(creators)
 print(ver)
 main()

@@ -78,8 +78,8 @@ class HelpExpression(Expression):
         This is help for calculator:
         Choose one of available operations and follow instructions.
         If you want to exit just hit enter or type an invalid operation.
-		For more help contact us on github.
-		Official GitHub link https://github.com/RealPlayerCraft/pythoncalc
+        For more help contact us on github.
+        Official GitHub link https://github.com/RealPlayerCraft/pythoncalc
         '''
     def readArguments(self):
         print()

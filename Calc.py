@@ -117,9 +117,9 @@ def main():
 
     print('Thank you for using this calculator')
 
-creator = 'Made by Real, piotro and historis from RealStudios'
+creators = 'Made by Real, piotro and historis from RealStudios'
 ver = 'Version: Open Alpha 0.3.3'
-print(creator)
+print(creators)
 print(ver)
 main()
 
